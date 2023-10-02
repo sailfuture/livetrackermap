@@ -10,6 +10,17 @@ layout: blog
   <body class="h-full">
   ```
 -->
+
+<head>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+    </head>
+
 <div>
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
     <div class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
@@ -197,7 +208,23 @@ layout: blog
     <main class="lg:pl-20">
       <div class="xl:pl-96">
         <div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
-          <!-- Main area -->
+
+
+            <body>
+            <div id="map"></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoiaHVudGVycnRob21wc29uIiwiYSI6ImNsbXQ2MDE2YjAxZHkyamxmcHdlenR5ZDQifQ.6VJnQFXp3-P7jPkwcwdFjA';
+                const map = new mapboxgl.Map({
+                    container: 'map', // container ID
+                    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+                    style: 'mapbox://styles/hunterrthompson/cln936cjg07b201nsev917itd', // style URL
+                    center: [-74.5, 40], // starting position [lng, lat]
+                    zoom: 9 // starting zoom
+                });
+            </script>
+            
+            </body>
+            </html>
         </div>
       </div>
     </main>
